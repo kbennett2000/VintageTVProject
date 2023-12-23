@@ -1,24 +1,37 @@
+// RSS Feed URLs
 const RSS_URL01 = "https://rss.app/feeds/de76IDxKSxVmsmk0.xml";
 const RSS_URL02 = "https://rss.app/feeds/gc1kAu4fXQue2ivy.xml";
 const RSS_URL03 = "https://rss.app/feeds/ki0CDDCG8YeqtEqI.xml";
 const RSS_URL04 = "https://rss.app/feeds/ZSRfLTLXc3m7Uj2y.xml";
 
+// Used in Sleep function
 var sleepSetTimeout_ctrl;
+
+// Output to be displayed to console
 var screenOutput = "";
+
+// The local time zone
 var localDate;
 
+// RSS-Parser
 let Parser = require("rss-parser");
 let parser = new Parser();
 
+// Main
 (async () => {
+  // Clear the console to begin
   console.clear();
 
+  // Infinite loop
   while (1 > 0) {
+    // Clear the screen output buffer
     screenOutput = "";
+    // Refresh feed data
     await GetNews(RSS_URL01);
     await GetNews(RSS_URL02);
     await GetNews(RSS_URL03);
     await GetNews(RSS_URL04);
+    // Display updated feed data
     await DisplayNews(screenOutput);
   }
 })();
@@ -29,7 +42,6 @@ async function GetNews(FeedURL) {
   feed.items.forEach((item) => {
     localDate = Date.parse(item.pubDate);
     const date1 = new Date(localDate);
-    //screenOutput += date1.toLocaleTimeString() + " - " + item.title + " - " + removeTags(item.content) + "***";
     screenOutput +=
       date1.toLocaleTimeString() + " - " + removeTags(item.content) + "***";
   });
@@ -67,6 +79,14 @@ async function DisplayNews(NewsToDisplay) {
 
       for (let i = 0; i < SplitNewsToDisplay.length; i++) {
         process.stdout.write(SplitNewsToDisplay.substring(i, i + 1));
+        var randomNumber = Math.floor(Math.random() * 25);
+        if (randomNumber == 7) {
+          process.stdout.write("\b");
+          var sleepTime = 10 + (Math.floor(Math.random() * 50));          
+          await sleep(sleepTime);
+          process.stdout.write(SplitNewsToDisplay.substring(i, i + 1));
+        }
+        
         ColumnCounter++;
         if (
           ColumnCounter >= 55 &&
@@ -79,8 +99,7 @@ async function DisplayNews(NewsToDisplay) {
           await sleep(7500);
           console.clear();
         } else {
-          var sleepTime = 60 + (Math.floor(Math.random() * 90));
-          
+          var sleepTime = 60 + (Math.floor(Math.random() * 90));          
           await sleep(sleepTime);
         }
       }
