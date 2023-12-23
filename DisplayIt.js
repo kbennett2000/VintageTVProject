@@ -57,7 +57,7 @@ async function DisplayNews(NewsToDisplay) {
     if (!UsedIndexValues.includes(ItemIndex)) {
       UsedIndexValues.push(ItemIndex);
 
-      var LineBreakCount = Math.floor(Math.random() * 20);
+      var LineBreakCount = Math.floor(Math.random() * 35);
 
       for (let x = 0; x < LineBreakCount; x++) {
         process.stdout.write("\n");
