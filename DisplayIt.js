@@ -79,13 +79,6 @@ async function DisplayNews(NewsToDisplay) {
 
       for (let i = 0; i < SplitNewsToDisplay.length; i++) {
         process.stdout.write(SplitNewsToDisplay.substring(i, i + 1));
-        var randomNumber = Math.floor(Math.random() * 25);
-        if (randomNumber == 7) {
-          process.stdout.write("\b");
-          var sleepTime = 10 + (Math.floor(Math.random() * 50));          
-          await sleep(sleepTime);
-          process.stdout.write(SplitNewsToDisplay.substring(i, i + 1));
-        }
         
         ColumnCounter++;
         if (
