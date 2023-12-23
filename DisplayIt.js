@@ -57,7 +57,7 @@ async function DisplayNews(NewsToDisplay) {
     if (!UsedIndexValues.includes(ItemIndex)) {
       UsedIndexValues.push(ItemIndex);
 
-      var LineBreakCount = Math.floor(Math.random() * 35);
+      var LineBreakCount = Math.floor(Math.random() * 25);
 
       for (let x = 0; x < LineBreakCount; x++) {
         process.stdout.write("\n");
@@ -69,7 +69,7 @@ async function DisplayNews(NewsToDisplay) {
         process.stdout.write(SplitNewsToDisplay.substring(i, i + 1));
         ColumnCounter++;
         if (
-          ColumnCounter >= 65 &&
+          ColumnCounter >= 55 &&
           SplitNewsToDisplay.substring(i, i + 1) == " "
         ) {
           process.stdout.write("\n");
@@ -79,7 +79,9 @@ async function DisplayNews(NewsToDisplay) {
           await sleep(7500);
           console.clear();
         } else {
-          await sleep(100);
+          var sleepTime = 80 + (Math.floor(Math.random() * 70));
+          
+          await sleep(sleepTime);
         }
       }
     }
