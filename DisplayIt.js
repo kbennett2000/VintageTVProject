@@ -79,7 +79,7 @@ async function DisplayNews(NewsToDisplay) {
           await sleep(7500);
           console.clear();
         } else {
-          var sleepTime = 80 + (Math.floor(Math.random() * 70));
+          var sleepTime = 60 + (Math.floor(Math.random() * 90));
           
           await sleep(sleepTime);
         }
