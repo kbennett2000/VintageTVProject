@@ -4,6 +4,7 @@ const RSS_URL02 = "https://rss.app/feeds/gc1kAu4fXQue2ivy.xml";
 const RSS_URL03 = "https://rss.app/feeds/ki0CDDCG8YeqtEqI.xml";
 const RSS_URL04 = "https://rss.app/feeds/ZSRfLTLXc3m7Uj2y.xml";
 const RSS_URL05 = "https://rss.app/feeds/5lKtfMoJiRH4ESY7.xml";
+const RSS_URL06 = "https://rss.app/feeds/w6WwA3eFiZiaRO7I.xml";
 
 // Used in Sleep function
 var sleepSetTimeout_ctrl;
@@ -33,6 +34,7 @@ let parser = new Parser();
     await GetNews(RSS_URL03);
     await GetNews(RSS_URL04);
     await GetNews(RSS_URL05);
+    await GetNews(RSS_URL06);
     // Display updated feed data
     await DisplayNews(screenOutput);
   }
