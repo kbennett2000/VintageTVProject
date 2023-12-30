@@ -1,10 +1,19 @@
 // RSS Feed URLs
-const RSS_URL01 = "https://rss.app/feeds/de76IDxKSxVmsmk0.xml";
-const RSS_URL02 = "https://rss.app/feeds/gc1kAu4fXQue2ivy.xml";
-const RSS_URL03 = "https://rss.app/feeds/ki0CDDCG8YeqtEqI.xml";
-const RSS_URL04 = "https://rss.app/feeds/ZSRfLTLXc3m7Uj2y.xml";
-const RSS_URL05 = "https://rss.app/feeds/5lKtfMoJiRH4ESY7.xml";
-const RSS_URL06 = "https://rss.app/feeds/w6WwA3eFiZiaRO7I.xml";
+// Kabamur_Taygeta
+const RSS_URL01 = "https://rsshub.app/twitter/user/Kabamur_Taygeta";
+// UAPJames
+const RSS_URL02 = "https://rsshub.app/twitter/user/UAPJames";
+// planethunter56
+const RSS_URL03 = "https://rsshub.app/twitter/user/planethunter56";
+// PostDisclosure
+const RSS_URL04 = "https://rsshub.app/twitter/user/PostDisclosure";
+// tinyklaus
+const RSS_URL05 = "https://rsshub.app/twitter/user/tinyklaus";
+// OMApproach
+const RSS_URL06 = "https://rsshub.app/twitter/user/OMApproach";
+// FamilyofTaygeta
+const RSS_URL07 = "https://rsshub.app/twitter/user/FamilyofTaygeta";
+
 
 // Used in Sleep function
 var sleepSetTimeout_ctrl;
@@ -35,6 +44,7 @@ let parser = new Parser();
     await GetNews(RSS_URL04);
     await GetNews(RSS_URL05);
     await GetNews(RSS_URL06);
+    await GetNews(RSS_URL07);
     // Display updated feed data
     await DisplayNews(screenOutput);
   }
