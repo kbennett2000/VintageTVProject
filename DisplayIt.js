@@ -1,19 +1,12 @@
 // RSS Feed URLs
-// Kabamur_Taygeta
-const RSS_URL01 = "https://rsshub.app/twitter/user/Kabamur_Taygeta";
-// UAPJames
-const RSS_URL02 = "https://rsshub.app/twitter/user/UAPJames";
-// planethunter56
-const RSS_URL03 = "https://rsshub.app/twitter/user/planethunter56";
-// PostDisclosure
-const RSS_URL04 = "https://rsshub.app/twitter/user/PostDisclosure";
-// tinyklaus
-const RSS_URL05 = "https://rsshub.app/twitter/user/tinyklaus";
-// OMApproach
-const RSS_URL06 = "https://rsshub.app/twitter/user/OMApproach";
-// FamilyofTaygeta
-const RSS_URL07 = "https://rsshub.app/twitter/user/FamilyofTaygeta";
-
+const RSS_URLs = [];
+RSS_URLs.push("https://rsshub.app/twitter/user/Kabamur_Taygeta");
+RSS_URLs.push("https://rsshub.app/twitter/user/UAPJames");
+RSS_URLs.push("https://rsshub.app/twitter/user/planethunter56");
+RSS_URLs.push("https://rsshub.app/twitter/user/PostDisclosure");
+RSS_URLs.push("https://rsshub.app/twitter/user/tinyklaus");
+RSS_URLs.push("https://rsshub.app/twitter/user/OMApproach");
+RSS_URLs.push("https://rsshub.app/twitter/user/FamilyofTaygeta");
 
 // Used in Sleep function
 var sleepSetTimeout_ctrl;
@@ -38,13 +31,14 @@ let parser = new Parser();
     // Clear the screen output buffer
     screenOutput = "";
     // Refresh feed data
-    await GetNews(RSS_URL01);
-    await GetNews(RSS_URL02);
-    await GetNews(RSS_URL03);
-    await GetNews(RSS_URL04);
-    await GetNews(RSS_URL05);
-    await GetNews(RSS_URL06);
-    await GetNews(RSS_URL07);
+    for (const element of RSS_URLs) {
+      try {
+        await GetNews(element);
+      } catch (error) {
+        // Do Nothing
+      }
+    }
+
     // Display updated feed data
     await DisplayNews(screenOutput);
   }
@@ -93,7 +87,7 @@ async function DisplayNews(NewsToDisplay) {
 
       for (let i = 0; i < SplitNewsToDisplay.length; i++) {
         process.stdout.write(SplitNewsToDisplay.substring(i, i + 1));
-        
+
         ColumnCounter++;
         if (
           ColumnCounter >= 55 &&
@@ -106,7 +100,7 @@ async function DisplayNews(NewsToDisplay) {
           await sleep(7500);
           console.clear();
         } else {
-          var sleepTime = 60 + (Math.floor(Math.random() * 90));          
+          var sleepTime = 60 + Math.floor(Math.random() * 90);
           await sleep(sleepTime);
         }
       }
