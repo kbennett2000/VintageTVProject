@@ -5,7 +5,7 @@ var sleepSetTimeout_ctrl;
 var MaxHorizontalDisplayLines = 25;
 
 // The maximum number of columns per row on the output screen
-var MaxColumnCount = 55;
+var MaxColumnCount = 45;
 
 // Amount of time to sleep between display feed items
 var SleepIntervalBetweenItems = 7500;
