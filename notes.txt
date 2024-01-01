@@ -1,19 +1,18 @@
 sudo apt-get update --fix-missing && sudo apt install curl
 
-
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 source ~/.bashrc
 nvm install v20.10.0
 
-
 git clone https://github.com/kbennett2000/VintageTVProject
-
 
 
 npm install rss-parser
 
+
 ##green block cursor:
 echo -e "\e[?16;0;080c" 
+
 
 ##green text:
 setterm -term linux -fore green -clear
@@ -25,7 +24,10 @@ GRUB_GFXMODE=1440x900x32
 GRUB_GFXPAYLOAD=1440x900x32
 
 
-
-
 sudo nano /etc/default/console-setup
 edit content: FONTSIZE="16x32"
+
+******************************************
+
+npm install axios
+npm install cheerio
