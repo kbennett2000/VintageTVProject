@@ -29,6 +29,13 @@ var MaxColumnCount = 55;
 // Amount of time to sleep between display feed items
 var SleepIntervalBetweenItems = 7500;
 
+// The minimum amount of time to sleep between characters
+var CharacterSleepIntervalFloor = 60;
+
+// The maximum amount of variable time between characters
+// Will be added to the minimum value (CharacterSleepIntervalFloor)
+var CharacterSleepIntervalVariableMax = 90;
+
 // RSS-Parser
 let Parser = require("rss-parser");
 let parser = new Parser();
@@ -95,13 +102,6 @@ async function DisplayNews(NewsToDisplay) {
 
   // Split input on ***
   var ParsedData = NewsToDisplay.split("***");
-
-  // The minimum amount of time to sleep between characters
-  var CharacterSleepIntervalFloor = 60;
-
-  // The maximum amount of variable time between characters
-  // Will be added to the minimum value (CharacterSleepIntervalFloor)
-  var CharacterSleepIntervalVariableMax = 90;
 
   // If the number of items to display is less that the Item Display Count, adjust it down to match
   if (ParsedData.length < 25) {
