@@ -22,7 +22,7 @@ Open /etc/default/grub with your favorite editor as root.
 Localize the line that says GRUB_GFXMODE= ... and change it to the resolution you want. Add another line for a new variable called GRUB_GFXPAYLOAD with the same resolution. It should look similar to this:
 GRUB_GFXMODE=1440x900x32
 GRUB_GFXPAYLOAD=1440x900x32
-
+** Set to 640x200 <<-- CGA resolution
 
 sudo nano /etc/default/console-setup
 edit content: FONTSIZE="16x32"
