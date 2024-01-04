@@ -1,0 +1,35 @@
+{
+  "dependencies": {
+    "axios": "^1.6.3",
+    "cheerio": "^1.0.0-rc.12",
+    "got": "^10.4.0",
+    "jquery": "^3.7.1",
+    "jsdom": "^16.7.0",
+    "node-fetch": "^2.6.1",
+    "nodemailer": "^6.9.8",
+    "puppeteer": "^21.6.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "rss-parser": "^3.13.0",
+    "xhr2": "^0.2.1"
+  },
+  "name": "vintagetvproject",
+  "description": "A small script to display RSS feeds on a console",
+  "version": "1.0.0",
+  "main": "DisplayIt.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Kris Bennett",
+  "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kbennett2000/VintageTVProject.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kbennett2000/VintageTVProject/issues"
+  },
+  "homepage": "https://github.com/kbennett2000/VintageTVProject#readme"
+}
